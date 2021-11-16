@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+              http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+              http://www.springframework.org/schema/tx
+              http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+              http://www.springframework.org/schema/context
+              http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+<bean class="org.example.dao.ApprenantsDaoImp" id="App" init-method="init" ></bean>
+
+<bean class="org.example.service.ApprenantsServiseImp" id="sybawayServices">
+	<property name="dao" ref="App"  ></property>
+</bean>
+
+<bean class="org.example.dao.ReservationDaoImp" id="Res" init-method="init2" ></bean>
+
+<bean class="org.example.service.ReservationServiceImp" id="ResServices">
+	<property name="dao" ref="Res"  ></property>
+</bean>
+
+<bean class="org.example.dao.AgendaDaoImp" id="Age" init-method="init3" ></bean>
+
+<bean class="org.example.service.AgendaServiceImp" id="AgeServices1">
+	<property name="dao" ref="Age"  ></property>
+</bean>
+
+<bean class="org.example.dao.FabriqueDaoImp" id="Fab" init-method="init4" ></bean>
+
+<bean class="org.example.service.FabriqueServiceImp" id="FabServices">
+	<property name="dao" ref="Fab"  ></property>
+</bean>
+
+ </beans>
